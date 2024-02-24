@@ -1,60 +1,21 @@
-body {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    background-color: #D1D0D0;
+#indexVideo {
+    min-height: 100vh;
+    z-index: -1;
 }
 
-.container {
-    position: relative;
-    width: 100%;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
     height: 100vh;
-    display: flex;
+    position: relative;
+    overflow: hidden;
 }
 
 .logo {
     position: absolute;
-    top: 5%;
-    right: 0;
-    width: 35vh;
-}
-
-.street {
-    position: absolute;
-    top: 20%;
-    left: 0;
-    width: 25vh;
-}
-
-.market {
-    position: absolute;
-    top: 32%;
-    right: 0;
-}
-
-.barber {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    /* width: 25vh; */
-}
-
-.breakfast {
-    position: absolute;
-    top: 72%;
-    right: 0;
-    /* width: 25vh; */
-}
-
-#index_street{
-    width: 40vw;
-}
-#index_market{
-    width: 50vw;
-}
-#index_barber{
-    width: 50vw;
-}
-#index_breakfast{
-    width: 50vw;
+    z-index: 1000;
+    width: 70vw;
+    top: 40vh;
+    left: 16vw;
 }
