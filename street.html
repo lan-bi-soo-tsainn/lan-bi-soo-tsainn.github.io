@@ -17,7 +17,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 15vh;
+            height: 20vh;
             background-color: white;
             display: flex;
             justify-content: center;
@@ -28,6 +28,48 @@
             position: absolute;
             top: 30%;
             z-index: 10;
+            width: 70%;
+            visibility: hidden;
+            transition-duration: 0.3s;
+            transition-property: ocacity;
+        }
+
+        .music-block .detail-street-img {
+            position: absolute;
+            bottom: 0;
+            width: 30%;
+            z-index: 2;
+            left: 25%;
+            background-color: white;
+        }
+
+        .music-block .angle {
+            position: absolute;
+            border: #000;
+            border-width: 0.1rem;
+            width: 33%;
+            height: 53%;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            bottom: 8%;
+            left: 5%;
+            z-index: 1;
+        }
+
+        .music-block .arrow-btn {
+            position: absolute;
+            width: 5vw;
+            height: 5vw;
+            z-index: 20;
+            bottom: 50%;
+            left: 7%;
+            transition-duration: 0.3s;
+            transition-property: transform;
+        }
+
+        .arrow-btn img {
+            width: 100%;
+            height: 100%;
         }
 
         .video-block {
@@ -50,6 +92,7 @@
 
         .video-block-intro {
             padding-inline-start: 0.15rem;
+            padding-top: 2.5rem;
             position: relative;
             color: black;
         }
@@ -68,10 +111,11 @@
 
         .video-block-intro-3d {
             position: absolute;
-            left: 30%;
+            left: 40%;
             top: -40%;
             width: 30%;
             aspect-ratio: 1;
+            z-index: 3;
         }
 
         .video-block-video-block {
@@ -128,7 +172,7 @@
             max-width: 53ch;
         }
 
-        .btn {
+        .top-btn {
             position: fixed;
             bottom: 5px;
             right: 0;
@@ -137,10 +181,11 @@
             z-index: 100;
         }
 
-        .btn img {
+        .top-btn img {
             width: 100%;
             height: 100%;
         }
+
     </style>
     <script async src="https://unpkg.com/es-module-shims/dist/es-module-shims.js"></script>
 
@@ -155,7 +200,12 @@
 
 <body>
     <div class="music-block">
-        <audio controls src="/assets/test.mp3"></audio>
+        <div class="arrow-btn">
+            <img src="/assets/arrow-btn.png" />
+        </div>
+        <img class="detail-street-img" src="/assets/detail_street.png" />
+        <div class="angle"></div>
+        <audio id="music" controls src="/assets/test.mp3"></audio>
     </div>
     <article>
         <section class="video-block">
@@ -196,7 +246,7 @@
                     friendliness.</p>
             </div>
         </section>
-        <div class="btn" data-action="gotop">
+        <div class="top-btn" data-action="gotop">
             <img src="/assets/btn.png"/>
         </div>
     </article>
@@ -227,6 +277,22 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var aduioButton = document.querySelector('.arrow-btn');
+        var music = document.getElementById("music");
+        aduioButton.addEventListener('click', function () {
+            if (aduioButton.style.transform == 'rotate(90deg)'){
+                aduioButton.style.transform = 'rotate(0deg)';
+                music.style.visibility = 'hidden';
+            } else {
+                aduioButton.style.transform = 'rotate(90deg)';
+                music.style.visibility = 'visible';
+            }
+            
+            console.log('click');
         });
     });
 </script>
