@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咱味所載</title>
+    <link rel="stylesheet" href="css/load.css">
+</head>
+
+<body>
+    <a href="index.html">
+        <video autoplay loop playsinline id="indexVideo">
+            <source src="/assets/load/load.mp4" type="video/mp4">
+        </video>
+        <img class="logo" src="assets/load/white_logo.png">
+    </a>
+</body>
+<script>
+    var video = document.getElementById("indexVideo");
+    function myFunction() {
+        if (video.paused) {
+            video.play();
+        }
+    }
+</script>
+</html>
