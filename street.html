@@ -287,9 +287,11 @@
             if (aduioButton.style.transform == 'rotate(90deg)'){
                 aduioButton.style.transform = 'rotate(0deg)';
                 music.style.visibility = 'hidden';
+                music.pause();
             } else {
                 aduioButton.style.transform = 'rotate(90deg)';
                 music.style.visibility = 'visible';
+                
             }
             
             console.log('click');
