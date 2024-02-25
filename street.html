@@ -40,8 +40,7 @@
             </div>
             <div class="video-block-video-block">
                 <video autoplay muted loop playsinline id="indexVideo">
-                    <source src="/assets/street/street_intro.mp4"
-                        type="video/mp4">
+                    <source src="/assets/street/street_intro.mp4" type="video/mp4">
                 </video>
             </div>
         </section>
@@ -53,14 +52,19 @@
                 <p>人情的故事就像是巷弄的微風，<br>悄悄地流轉，<br>縷縷串連著愛與連結。</p>
             </div>
             <div class="article-block-word en">
-                <p>The alleyways, a silent warmth of human connection,Every corner marks<br> the beginning of a story.<br>
-                    Among neighbors, profound and delicate emotions flow.As if pages<br>chronicling life's moments,Each resident plays a vital role in composing the essence of human kindness.<br>
-                    The alleyways serve as a notebook,Reminding an elderly couple to water <br>their plants every morning for the days to come,Ensuring children <br>remember who won the final game of red light, green light.<br>
-                    Tales of human connection are like the gentle breeze in the alley,Quietly <br>circulating,Intertwining threads of love and connection.</p>
+                <p>The alleyways, a silent warmth of human connection,Every corner marks<br> the beginning of a
+                    story.<br>
+                    Among neighbors, profound and delicate emotions flow.As if pages<br>chronicling life's moments,Each
+                    resident plays a vital role in composing the essence of human kindness.<br>
+                    The alleyways serve as a notebook,Reminding an elderly couple to water <br>their plants every
+                    morning for the days to come,Ensuring children <br>remember who won the final game of red light,
+                    green light.<br>
+                    Tales of human connection are like the gentle breeze in the alley,Quietly
+                    <br>circulating,Intertwining threads of love and connection.</p>
             </div>
         </section>
         <div class="top-btn" data-action="gotop">
-            <img src="/assets/btn.png"/>
+            <img src="/assets/btn.png" />
         </div>
     </article>
 
@@ -97,19 +101,46 @@
         var aduioButton = document.querySelector('.arrow-btn');
         var music = document.getElementById("music");
         aduioButton.addEventListener('click', function () {
-            if (aduioButton.style.transform == 'rotate(90deg)'){
+            if (aduioButton.style.transform == 'rotate(90deg)') {
                 aduioButton.style.transform = 'rotate(0deg)';
                 music.style.visibility = 'hidden';
                 music.pause();
             } else {
                 aduioButton.style.transform = 'rotate(90deg)';
                 music.style.visibility = 'visible';
-                
+
             }
-            
-          
+
+
         });
     });
+
+    //获取触摸开始时的位置和时间
+    document.addEventListener('touchstart', function (event) {
+        startX = event.touches[0].pageX;
+        startTime = new Date().getTime();
+    }, false);
+
+    //获取触摸过程中的实时位置
+    document.addEventListener('touchmove', function (event) {
+        endX = event.touches[0].pageX;
+    }, false);
+
+    //当触摸结束时，判断是否进行切换操作
+    document.addEventListener('touchend', function (event) {
+        var distance = endX - startX; //触摸移动的距离
+        endTime = new Date().getTime(); //获取触摸结束的时间
+        var duration = endTime - startTime; //触摸持续的时间
+        var speed = Math.abs(distance) / duration; //触摸的速度
+
+        if (distance > 0 && speed > 0.2) { //向右滑动的条件
+            //执行向右滑动的操作
+            window.location.href = "/breakfast.html";
+        } else if (distance < 0 && speed > 0.2) { //向左滑动的条件
+            //执行向左滑动的操作
+            window.location.href = "/market.html";
+        }
+    }, false);
 </script>
 
 </html>
