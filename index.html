@@ -10,8 +10,8 @@
 
 <body>
     <a href="home.html">
-        <video autoplay muted loop playsinline id="indexVideo">
-            <source src="https://res.cloudinary.com/djueatwlr/video/upload/v1708793691/lanbi/o7oyddp8iq8swos9izcp.mp4" type="video/mp4">
+        <video autoplay muted playsinline loop id="indexVideo">
+            <source src="/assets/index/load.mp4" type="video/mp4">
         </video>
         <img class="logo" src="assets/index/white_logo.png">
     </a>
@@ -20,8 +20,10 @@
     var video = document.getElementById("indexVideo");
     function myFunction() {
         if (video.paused) {
+            video.muted = false;
             video.play();
         }
     }
+    myFunction();
 </script>
 </html>

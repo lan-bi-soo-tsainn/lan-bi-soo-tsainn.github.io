@@ -164,7 +164,9 @@ body {
     line-height: 2.8;
     max-width: 60ch;
 }
-
+.article-block-word.en p {
+    margin-bottom: 1rem;
+}
 .top-btn {
     position: fixed;
     bottom: 5px;
