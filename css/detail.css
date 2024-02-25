@@ -97,7 +97,7 @@ body {
 
 .video-block-intro p {
     font-weight: bold;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 
 
@@ -160,9 +160,9 @@ body {
 
 .article-block-word.en {
     font-weight: 400;
-    font-size: .6rem;
-    line-height: 2.2;
-    max-width: 53ch;
+    font-size: .5rem;
+    line-height: 2.8;
+    max-width: 60ch;
 }
 
 .top-btn {

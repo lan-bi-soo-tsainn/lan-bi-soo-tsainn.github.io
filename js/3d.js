@@ -49,8 +49,8 @@ const spotLight5 = new THREE.SpotLight(0xffffff, 3, 100, 0.2, 0.5);
 spotLight5.position.set(-25, 0, 0);
 scene.add(spotLight5);
 
-const loader = new GLTFLoader().setPath('assets/3d/');
-loader.load('3D.gltf', (gltf) => {
+const loader = new GLTFLoader().setPath('assets/model/3d/');
+loader.load('3d.gltf', (gltf) => {
     const mesh = gltf.scene;
     mesh.position.set(0, 0, 0);
     scene.add(mesh);
