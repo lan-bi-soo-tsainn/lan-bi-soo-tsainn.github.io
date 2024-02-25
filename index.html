@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <video autoplay playsinline loop preload="auto" id="indexVideo">
+    <video autoplay playsinline muted loop preload="auto" id="indexVideo">
         <source src="/assets/index/load.mp4" type="video/mp4">
     </video>
     <a href="home.html">
@@ -23,9 +23,9 @@
     document.addEventListener('DOMContentLoaded', function () {
         video.addEventListener('click', function () {
             video.play();
+            video.muted = false;
         });
     });
-    video.click();
 </script>
 
 </html>
