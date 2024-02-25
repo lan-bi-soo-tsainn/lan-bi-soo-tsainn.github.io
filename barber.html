@@ -132,18 +132,18 @@
     var endTime = 0; //触摸结束的时间
 
     //获取触摸开始时的位置和时间
-    document.addEventListener('touchstart', function (event) {
+    video.addEventListener('touchstart', function (event) {
         startX = event.touches[0].pageX;
         startTime = new Date().getTime();
     }, false);
 
     //获取触摸过程中的实时位置
-    document.addEventListener('touchmove', function (event) {
+    video.addEventListener('touchmove', function (event) {
         endX = event.touches[0].pageX;
     }, false);
 
     //当触摸结束时，判断是否进行切换操作
-    document.addEventListener('touchend', function (event) {
+    video.addEventListener('touchend', function (event) {
         var distance = endX - startX; //触摸移动的距离
         endTime = new Date().getTime(); //获取触摸结束的时间
         var duration = endTime - startTime; //触摸持续的时间
