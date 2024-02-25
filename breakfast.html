@@ -143,10 +143,10 @@
         var duration = endTime - startTime; //触摸持续的时间
         var speed = Math.abs(distance) / duration; //触摸的速度
 
-        if (distance > 0 && speed > 0.2) { //向右滑动的条件
+        if (distance > 5 && speed > 0.2) { //向右滑动的条件
             //执行向右滑动的操作
             window.location.href = "/barber.html";
-        } else if (distance < 0 && speed > 0.2) { //向左滑动的条件
+        } else if (distance < 5 && speed > 0.2) { //向左滑动的条件
             //执行向左滑动的操作
             window.location.href = "/street.html";
         }
