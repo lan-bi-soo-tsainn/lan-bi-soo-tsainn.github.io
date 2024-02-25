@@ -90,6 +90,7 @@ body {
 }
 
 .video-block-intro h1 {
+    padding-top: 1rem;
     font-weight: bold;
     font-size: 2rem;
     margin-block: 1rem;
@@ -97,22 +98,22 @@ body {
 
 .video-block-intro p {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 
 .video-block-intro-3d {
     position: absolute;
-    left: 40%;
-    top: -40%;
-    width: 30%;
+    left: 42%;
+    top: -70%;
+    width: 50%;
     aspect-ratio: 1;
     z-index: 3;
 }
 
 .video-block-video-block {
     position: relative;
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 5rem;
     display: flex;
     justify-content: center;

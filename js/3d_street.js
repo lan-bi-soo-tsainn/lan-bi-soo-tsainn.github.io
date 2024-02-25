@@ -7,7 +7,7 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 const container = document.querySelector('.video-block-intro-3d');
 console.log(container);
-renderer.setSize(300, 300);
+renderer.setSize(400, 400);
 renderer.setClearColor(0xFFFFFF, 0);
 renderer.setPixelRatio(window.devicePixelRatio);
 container.appendChild(renderer.domElement);
@@ -15,13 +15,13 @@ container.appendChild(renderer.domElement);
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(15, 1, 1, 1000);
-camera.position.set(14, 10, 18);
-camera.lookAt(1, 1, 1);
+camera.position.set(-25, 10, 20);
+camera.lookAt(0, 0, 0);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.enablePan = false;
-controls.minDistance = 18;
+controls.minDistance = 22;
 controls.maxDistance = 24.9;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 1.5;
@@ -49,10 +49,10 @@ const spotLight5 = new THREE.SpotLight(0xffffff, 3, 100, 0.2, 0.5);
 spotLight5.position.set(-25, 0, 0);
 scene.add(spotLight5);
 
-const loader = new GLTFLoader().setPath('assets/model/3d/');
-loader.load('3D.gltf', (gltf) => {
+const loader = new GLTFLoader().setPath('assets/street/3d/');
+loader.load('street.gltf', (gltf) => {
     const mesh = gltf.scene;
-    mesh.position.set(0, 0, 0);
+    mesh.position.set(-1, 1, 0);
     scene.add(mesh);
 });
 
