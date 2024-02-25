@@ -9,21 +9,23 @@
 </head>
 
 <body>
+    <video autoplay playsinline loop preload="auto" id="indexVideo">
+        <source src="/assets/index/load.mp4" type="video/mp4">
+    </video>
     <a href="home.html">
-        <video autoplay muted playsinline loop id="indexVideo">
-            <source src="/assets/index/load.mp4" type="video/mp4">
-        </video>
         <img class="logo" src="assets/index/white_logo.png">
+    </a>
+    
     </a>
 </body>
 <script>
-    var video = document.getElementById("indexVideo");
-    function myFunction() {
-        if (video.paused) {
-            video.muted = false;
+    var video = document.getElementById('indexVideo');
+    document.addEventListener('DOMContentLoaded', function () {
+        video.addEventListener('click', function () {
             video.play();
-        }
-    }
-    myFunction();
+        });
+    });
+    video.click();
 </script>
+
 </html>
